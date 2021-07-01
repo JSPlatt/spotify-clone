@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import Login from './Login'
 
 function App() {
   return (
-    <div className="App">
-      <h1>MAKING A SPOTIFY CLONE WOOOP!!</h1>
+    <div className="app">
+      <h1>MAKING A SPOTIFY CLONE WOOOP!! 🚀 </h1>
+      <Login />
     </div>
   );
 }
