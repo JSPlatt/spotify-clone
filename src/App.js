@@ -17,15 +17,12 @@ function App() {
     let _token = hash.access_token
 
     if (_token) {
-      spotify.setAccessToken(_token)
-
       dispatch({
         type: "SET_TOKEN",
         token: _token
       })
     
-      // spotify.setAccessToken(_token)
-
+      spotify.setAccessToken(_token)
       spotify.getMe().then(user => {
         dispatch({
           type: 'SET_USER',
@@ -39,6 +36,13 @@ function App() {
           playlists: playlists,
         })
       })
+
+      spotify.getPlaylist('4jERPEqtf8Wcl4tlOpkIot').then( response =>
+        dispatch({
+          type: 'SET_DISCOVER_WEEKLY',
+          discover_weekly: response,
+        })
+      )
     }
   }, [])
 
